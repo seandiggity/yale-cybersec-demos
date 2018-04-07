@@ -1,0 +1,17 @@
+<img src='http://neveryetmelted.com/wp-content/uploads/2016/11/Handsome_Dan_XVIII.jpg' />
+
+<input type='text' placeholder='Your Phone Number' style='font-size: 18px;padding: 6px;border: 3px solid red;' />
+
+<iframe width='100%' height='300' src='https://wikipedia.org' frameborder='0'></iframe>
+
+<a href='https://www.myinstants.com/media/sounds/that_was_easy.mp3'><img src='https://s14.postimg.org/ngygz3e5t/easy_button.gif' style='height: 180px'></a>
+
+<iframe width='520' height='270' src='https://www.youtube.com/embed/J---aiyznGQ' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>
+
+<script>alert('Sign up for our mailing list! joe@sketchyemailaddress.com'); </script>
+
+<script>function Redirect() { window.location='http://geektyper.com/anon/'; } setTimeout('Redirect()', 3000);</script>
+
+<script>function Redirect() { window.location='https://www.youtube.com/channel/UCCjBdg3-oRpyThG7sOAzuiw'; } document.write('<strong>You will be redirected to my awesome YouTube Channel in 5 seconds...</strong>'); setTimeout('Redirect()', 5000);</script>
+
+
