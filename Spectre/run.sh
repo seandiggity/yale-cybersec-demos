@@ -1,12 +1,33 @@
 #!/bin/bash
 
-# The secret is stored in secret.txt  The text in that file will be read to memory and then pulled from memory character-by-character using the Spectre speculative execution exploit (https://meltdownattack.com)
+# Shell script by Sean O'Brien sean@webio.me | sean.obrien@yale.edu to tweak Spectre Proof-of-Concept for live demonstrations.
+#
+# The secret is stored in a file (secret.txt by default).
+# The text in that file will be read into memory and then pulled from memory character-by-character using the Spectre speculative execution exploit (https://meltdownattack.com)
+#
+# Optionally, the PHP form index.php will save to the secret file, which allows for classroom/audience participation.
 
-# convert multi-line secret.txt file to single line
-tr '\n' ' ' < secret.txt
+# secret file
+_file="secret.txt"
 
- # insert contents of secret.txt into C source
-sed -e "s/TOPSECRET/$(<secret.txt sed -e 's/[\&/]/\\&/g' -e 's/$//' | tr -d '\n')/g" -i Source.c
+# check if the file exists, if not then create it
+if [ -s $_file ] 
+then
+    # set file permissions to read/write for all
+    chmod a+rw $_file
+
+    # convert multi-line file to single line
+    tr '\n' ' ' < $_file
+else
+    # create file with default secret text
+    echo "YOUR-SECRET-GOES-HERE" > $_file
+
+    # set file permissions to read/write for all
+    chmod a+rw $_file
+fi
+
+# insert contents of file into C source
+sed -e "s/TOPSECRET/$(<$_file sed -e 's/[\&/]/\\&/g' -e 's/$//' | tr -d '\n')/g" -i Source.c
 
 # make and compile Spectre exploit Proof-of-Concept
 make
